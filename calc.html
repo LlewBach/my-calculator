@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="calc.css">
+  <title>myCalc</title>
+</head>
+<body>
+  <div class="calc-outline">
+    <div id="answer-box">
+    
+    </div>
+    <div class="num-grid">
+      <button onclick="
+        calculation += '1';
+        document.getElementById('answer-box').textContent = calculation;
+        ">1</button>
+      <button onclick="
+        calculation += '2';
+        document.getElementById('answer-box').textContent = calculation;
+      ">2</button>
+      <button onclick="
+        calculation += '3';
+        document.getElementById('answer-box').textContent = calculation;
+      ">3</button>
+      <button onclick="
+        calculation += '4';
+        document.getElementById('answer-box').textContent = calculation;
+      ">4</button>
+      <button onclick="
+        calculation += '5';
+        document.getElementById('answer-box').textContent = calculation;
+      ">5</button>
+      <button onclick="
+        calculation += '6';
+        document.getElementById('answer-box').textContent = calculation;
+      ">6</button>
+      <button onclick="
+        calculation += '7';
+        document.getElementById('answer-box').textContent = calculation;
+      ">7</button>
+      <button onclick="
+        calculation += '8';
+        document.getElementById('answer-box').textContent = calculation;
+      ">8</button>
+      <button onclick="
+        calculation += '9'
+        document.getElementById('answer-box').textContent = calculation;
+      ">9</button>
+      <div></div>
+      <div class="zero-row">
+        <button class="zero-button" onclick="
+          calculation += '0';
+          document.getElementById('answer-box').textContent = calculation;
+          ">0</button>
+      </div>
+    </div>
+    <div class="operator-row">
+      <button onclick="
+        calculation += '+';
+        document.getElementById('answer-box').textContent = calculation;
+        ">+</button>
+      <button onclick="
+        calculation += '-';
+        document.getElementById('answer-box').textContent = calculation;
+      ">-</button>
+      <button onclick="
+        calculation += '*';
+        document.getElementById('answer-box').textContent = calculation;
+      ">x</button>
+      <button onclick="
+        calculation += '/';
+        document.getElementById('answer-box').textContent = calculation;
+      ">/</button>
+    </div>
+    <div class="final-row">
+      <button onclick="
+        calculation = ''
+        document.getElementById('answer-box').textContent = calculation;
+        ">C</button>
+      <button onclick="
+        document.getElementById('answer-box').textContent = calculation + ' = ' + eval(calculation);
+        calculation = eval(calculation);
+      ">=</button>
+
+    </div>
+  </div>
+
+  <script>
+    let calculation = '';
+
+    document.getElementById("answer-box").textContent = calculation;
+    
+  </script>
+  
+</body>
+</html>
