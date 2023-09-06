@@ -13,64 +13,50 @@
     <div class="num-grid">
       <button onclick="
         addCharacter(1);
-        updateScreen();
         ">1</button>
       <button onclick="
         addCharacter(2);
-        updateScreen();
       ">2</button>
       <button onclick="
         addCharacter(3);
-        updateScreen();
       ">3</button>
       <button onclick="
         addCharacter(4);
-        updateScreen();
       ">4</button>
       <button onclick="
         addCharacter(5);
-        updateScreen();
       ">5</button>
       <button onclick="
         addCharacter(6);
-        updateScreen();
       ">6</button>
       <button onclick="
         addCharacter(7);
-        updateScreen();
       ">7</button>
       <button onclick="
         addCharacter(8);
-        updateScreen();
       ">8</button>
       <button onclick="
         addCharacter(9);
-        updateScreen();
       ">9</button>
       <div></div>
       <div class="zero-row">
         <button class="zero-button" onclick="
           addCharacter(0);
-          updateScreen();
           ">0</button>
       </div>
     </div>
     <div class="operator-row">
       <button onclick="
         addCharacter('+');
-        updateScreen();
         ">+</button>
       <button onclick="
         addCharacter('-');
-        updateScreen();
       ">-</button>
       <button onclick="
         addCharacter('*');
-        updateScreen();
       ">x</button>
       <button onclick="
         addCharacter('/');
-        updateScreen();
       ">/</button>
     </div>
     <div class="final-row">
@@ -87,9 +73,13 @@
   </div>
 
   <script>
-    let calculation = '';
+    let calculation = localStorage.getItem('calculation') || '';
+    document.getElementById('answer-box').textContent = calculation;
+    
     function addCharacter(input) {
       calculation += input;
+      localStorage.setItem('calculation', calculation);
+      updateScreen();
     }
     function updateScreen() {
       document.getElementById('answer-box').textContent = calculation;
